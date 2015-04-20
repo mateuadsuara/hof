@@ -5,7 +5,7 @@ Having the possibility to use functions as values in a programming language enab
 
 [hof]: http://en.wikipedia.org/wiki/Higher-order_function
 
-That may seem simple but has tremendous connotations. We are going to explore some of them here.
+That may seem simple but has tremendous implications. We are going to explore some of them here.
 
 **Clarification note**: I'm going to use examples written in Ruby. They are meant to be applicable to any programming language that can use functions as arguments and return values. Also, I'm not going to follow some Ruby conventions in favor of having the most homogeneous and explicit examples possible.
 
