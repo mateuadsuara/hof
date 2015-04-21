@@ -1,7 +1,7 @@
 Introduction to higher-order functions
 ======================================
 
-Having the possibility to use functions as values in a programming language enables us to make [higher-order functions][hof]. That's a fancy way of saying that **a function receives and/or returns functions**. Lambdas, Closures, Blocks and Methods are also fancy names to say: *functions* (That's an oversimplification but will be enough for this introduction).
+Having the possibility to use functions as values in a programming language enables us to make [higher-order functions][hof]. That's a fancy way of saying that **a function receives and/or returns functions**. Lambdas, Closures, Blocks and Methods are also fancy names to say: *functions* (That's an oversimplification but will be enough for this post).
 
 [hof]: http://en.wikipedia.org/wiki/Higher-order_function
 
