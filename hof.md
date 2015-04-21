@@ -61,7 +61,7 @@ puts_eligible_driver_names.call $stdout
 puts_eligible_driver_names.call file
 ```
 
-But that will solve a bit of the problem only for this concrete scenario. We don't want to be tied to `eligible_driver_names` so we can reuse it in more scenarios. We could generalise it a bit more by passing it as a parameter like this:
+But that will solve a part of the problem and only for this concrete scenario. We don't want to be tied to `eligible_driver_names` so we can reuse it in more scenarios. We could generalise it a bit more by passing it as a parameter like this:
 
 ```ruby
 puts_each = lambda{|collection, stream|  
