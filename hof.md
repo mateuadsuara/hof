@@ -209,7 +209,7 @@ Object orientation
 
 At this point you may be thinking: All of that is *functional programming*. It is not *object oriented*. They are two different paradigms. We have been nesting function calls. We have been sending the collection around and transforming it. We haven't defined any class!
 
-In object oriented you have the data and the behaviour that uses that data together in a class. The functions `each`, `select`, `map` operate over a collection. So that behaviour could be in the collection class.
+In object oriented languages you have the data and the behaviour that uses that data together in a class. The functions `each`, `select`, `map` operate over a collection. So that behaviour could be in the collection class.
 
 ```ruby
 class Collection
