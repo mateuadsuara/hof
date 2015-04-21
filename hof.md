@@ -161,7 +161,7 @@ By hiding the `for` loop inside those functions, we have created an [abstraction
 
 For example: In the `each` function *what we do* is: *do a `side_effect` with each element in the collection*. *How we do it* is: *iterating sequentially with the `for` loop*.
 
-We could change the implementation of `each` for one that process the elements in parallel to take advantage of multi-core or several clusters. Or we could change the implementation of `map` for one that does the transformation only if the result is going to be used ([lazy evaluation][lazy]).
+We could change the implementation of `each` for one that process the elements in parallel to take advantage of multi-core or several clusters. We could also change the implementation of `map` for one that does the transformation only if the result is going to be used ([lazy evaluation][lazy]).
 
 [lazy]: http://en.wikipedia.org/wiki/Lazy_evaluation
 
