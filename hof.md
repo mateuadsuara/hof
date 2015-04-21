@@ -24,7 +24,7 @@ for person in people
 end
 ```
 
-This `for` loop, although small and with harmless looks, contains highly entangled code. It is full of concreteness. Nothing in it can be reused. Users are going to be forced to duplicate the loop and most of the operations if they want to do something similar.
+This `for` loop, although small and harmless looking, contains highly entangled code. It is full of concreteness. Nothing in it can be reused. Users are going to be forced to duplicate the loop and most of the operations if they want to do something similar.
 
 For example: let's suppose in some parts we want to print the names of the people who can drive. And, in other parts we want to save them in a file. We want to reuse everything but the process of doing something with the names of each eligible driver. What do we do?
 
