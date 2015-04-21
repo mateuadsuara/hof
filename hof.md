@@ -155,11 +155,11 @@ map = lambda{|collection, transformation|
 eligible_driver_names = map.call drivers, lambda{|person| person[:name]}
 ```
 
-By hiding the `for` loop inside those functions, we have created an [abstraction][abstraction]. We have separated `what to do` from `how to do it`. Now the clients can depend only on `what to do`. That enables the possibility to change `how to do it` without affecting them.
+By hiding the `for` loop inside those functions, we have created an [abstraction][abstraction]. We have separated *what to do* from *how to do it*. Now the clients can depend only on *what to do*. That enables the possibility to change *how to do it* without affecting them.
 
 [abstraction]: http://en.wikipedia.org/wiki/Abstraction_(computer_science)
 
-For example: In the `each` function what we do is: *do a `side_effect` with each element in the collection*. How we do it is: *iterating sequentially with the `for` loop*. 
+For example: In the `each` function *what we do* is: *do a `side_effect` with each element in the collection*. *How we do it* is: *iterating sequentially with the `for` loop*.
 
 We could change the implementation of `each` for one that process the elements in parallel to take advantage of multi-core or several clusters. Or we could change the implementation of `map` for one that does the transformation only if the result is going to be used ([lazy evaluation][lazy]).
 
