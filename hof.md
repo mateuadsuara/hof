@@ -45,8 +45,6 @@ for name in eligible_driver_names
 end
 ```
 
-*(If you know Ruby, you may be wondering why I don't use the better mechanisms that Ruby provides for this. Don't worry: we will arrive there. That's the point. Please bear with me and keep in mind that these examples are not meant to be Ruby specific.)*
-
 We have here structural duplication. We are repeating the same loop structure each time we do something with each element of a collection. The only difference between the last two loops is the stream where we `puts` the `name`. We could generalise a bit those two `for` loops that iterate through the `eligible_driver_names` like this:
 
 ```ruby
