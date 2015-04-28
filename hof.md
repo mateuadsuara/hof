@@ -2,15 +2,11 @@ Introduction to higher-order functions
 ======================================
 
 Having the possibility to use functions as values in a programming language enables us to make [higher-order functions][hof]. That's a fancy way of saying that **a function receives and/or returns functions**. Lambdas, Closures, Blocks and Methods are also fancy names to say: *functions* (That's an oversimplification but will be enough for this post).
+That may seem simple but has tremendous implications. We are going to explore some of them here. 
 
 [hof]: http://en.wikipedia.org/wiki/Higher-order_function
 
-That may seem simple but has tremendous implications. We are going to explore some of them here.
-
-**Clarification note**:
-This is not a *how to do it* post. It only provides an introduction to some ways of using functions.
-You may already know some of them. Some ways may not be practical in some contexts. Other ways may be widely used already. You should decide if they are interesting enough to try them or not.
-The following examples are written in JavaScript, but they should be applicable to any programming language that can use any kind of functions as arguments and return values.
+To get better understanding of the mechanics, we are going to reimplement some [higher-order functions][hof] and that will give us an intuition of what may happen under the covers.
 
 Starting point
 --------------
@@ -29,7 +25,7 @@ for (var i = 0; i < people.length; i++) {
 }
 ```
 
-This `for` loop, although small and harmless looking, contains highly entangled code. It is full of concreteness. Nothing in it can be reused. Users are going to be forced to duplicate the loop and most of the operations if they want to do something similar.
+This `for` loop, although small and harmless looking, contains highly entangled code. It can only be tested as a whole. It is full of concreteness. Nothing in it can be reused. Users are going to be forced to duplicate the loop and most of the operations if they want to do something similar.
 
 For example: let's suppose in some parts we want to print the names of the people who can drive. And, in other parts we want to save them in a file. We want to reuse everything but the process of doing something with the names of each eligible driver. What do we do?
 
@@ -100,7 +96,7 @@ That code now is more generic but it is completely tied to the `write` method on
 Receive functions as arguments
 ------------------------------
 
-To swap the code that we execute on `each` element of a collection we previously introduced the `stream` *duck type*. That worked because we introduced a public API that was common to the options we had at the moment. If we want to make it more generic, we need to remove more specific details from that API. You can think that someone receives a `text` and the outcome of that call is something that cannot be seen by the caller. That way we have removed the `stream` and `write` concepts. What we have left is just a function that receives a `text` and does not return anything.
+To swap the code that we execute on `each` element of a collection we previously introduced the `stream` *duck type*. That worked because we introduced a public API that was common to the options we had at the moment. We introduced a bit of polymorphism. If we want to make it more generic, we need to remove more specific details from that API. You can think that someone receives a `text` and the outcome of that call is something that cannot be seen by the caller. That way we have removed the `stream` and `write` concepts. What we have left is just a function that receives a `text` and does not return anything. That's results in much less restricted polymorphism.
 
 ```js
 var each = function(collection, sideEffect) {
@@ -269,7 +265,7 @@ var drivers = filterDrivers(people);
 var janes = filterJanes(people);
 ```
 
-The last thing we would like to do is to `join` several functions into one, having the output from one function going to the input of the next. With that, we can reproduce the behaviour of the first piece of code in the starting point at a much higher level of abstraction.
+The last thing we would like to do is to `join` several functions into one, having the output from one function going to the input of the next. With that, we can reproduce the behaviour of the first piece of code in the starting point.
 
 ```js
 var join = function(function1, function2, functionN) {
@@ -287,9 +283,12 @@ var onlyDrivers = bind(cycle(filter), canDrive);
 var getTheirNames = bind(cycle(map), getName);
 var printThem = bind(cycle(each), consoleStream.write);
 
-var execute = join(onlyDrivers, getTheirNames, printThem);
-execute(people);
+join(onlyDrivers, getTheirNames, printThem)(people);
 ```
+
+There we have code at a much higher level of abstraction. In contrast with the code at the starting point, this one enables us to see what the program is doing in human terms: given `people` treats `only drivers`, `gets their names` and `prints them`.
+
+The functions that we've defined conform to SOLID principles at a much more fine-grained level. That makes them very loosely coupled and as a result they are extremely easy to test as units. In addition, if we need to change a part of the system, it is as simple as changing a function.
 
 You may start to feel now that [higher-order functions][hof] have very nice composable properties. I like to see them as a way to create a kind of lego system, a system with very composable little pieces that makes easy to create big and very expressive worlds.
 
