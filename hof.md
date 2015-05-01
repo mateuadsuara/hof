@@ -140,7 +140,7 @@ for (var i = 0; i < people.length; i++) {
 
 ```js
 var filter = function(collection, predicate) {
-  var filtered = []
+  var filtered = [];
   for (var i = 0; i < collection.length; i++) { 
     if (predicate(collection[i])) {
       filtered.push(collection[i]);
