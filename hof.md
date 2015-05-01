@@ -219,7 +219,7 @@ But that only works in this context because it is tied directly to `people`. We 
 ```js
 var filterCollection = function(collection){
   return function(predicate){
-    return filter(collection, predicate)
+    return filter(collection, predicate);
   };
 };
 var filterPeople = filterCollection(people);
