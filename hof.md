@@ -237,7 +237,7 @@ But that is only valid for the `filter` function. We would like to do that with 
 ```js
 var bind = function(initialFunction, argument1, argument2, argumentN){
   var partialArguments = Array.prototype.slice.call(arguments, 1);
-  return function(){
+  return function(remainingArgument1, remainingArgument2, remainingArgumentN){
     var remainingArguments = Array.prototype.slice.call(arguments);
     return initialFunction.apply(null, partialArguments.concat(remainingArguments));
   };
