@@ -183,7 +183,7 @@ By hiding the `for` loop inside those functions, we have created an [abstraction
 
 [abstraction]: http://en.wikipedia.org/wiki/Abstraction_(computer_science)
 
-For example: In the `each` function *what we do* is: *do a `side_effect` with each element in the collection*. *How we do it* is: *iterating sequentially with the `for` loop*.
+For example: In the `each` function *what we do* is: *do a `sideEffect` with each element in the collection*. *How we do it* is: *iterating sequentially with the `for` loop*.
 
 We could change the implementation of `each` for one that process the elements in parallel to take advantage of multi-core or several clusters. We could also change the implementation of `map` for one that does the transformation only if the result is going to be used ([lazy evaluation][lazy]).
 
