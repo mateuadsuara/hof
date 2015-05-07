@@ -99,9 +99,9 @@ Receive functions as arguments
 To swap the code that we execute on `each` element of a collection we previously introduced the `stream` objects. That way we had a common way to use the options we had at the moment. If we want to make it more generic, we need to remove more specific details from that. You can think that someone receives a `text` and the outcome of that call is something that cannot be seen by the caller. That way we have removed the `stream` and `write` concepts. What we have left is just a function that receives a `text` and does not return anything.
 
 ```js
-var each = function(collection, sideEffect) {
+var each = function(collection, elementHandler) {
   for (var i = 0; i < collection.length; i++) { 
-    sideEffect(collection[i]);
+    elementHandler(collection[i]);
   }
 };
 
@@ -183,7 +183,7 @@ By hiding the `for` loop inside those functions, we have created an [abstraction
 
 [abstraction]: http://en.wikipedia.org/wiki/Abstraction_(computer_science)
 
-For example: In the `each` function *what we do* is: *do a `sideEffect` with each element in the collection*. *How we do it* is: *iterating sequentially with the `for` loop*.
+For example: In the `each` function *what we do* is: *do something with each element in the collection*. *How we do it* is: *iterating sequentially with the `for` loop*.
 
 We could change the implementation of `each` for one that process the elements in parallel to take advantage of multi-core or several clusters. We could also change the implementation of `map` for one that does the transformation only if the result is going to be used ([lazy evaluation][lazy]).
 
