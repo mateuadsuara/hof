@@ -115,7 +115,7 @@ each(eligibleDriverNames, consoleStream.write);
 each(eligibleDriverNames, fileStream.write);
 ```
 
-Now, this is `each` function is very generic. It can be reused in a very wide context.
+Now, this `each` function is very generic. It can be reused in a very wide context.
 
 We can do the same with the remaining piece of code from the beginning:
 
