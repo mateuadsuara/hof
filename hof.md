@@ -25,7 +25,7 @@ for (var i = 0; i < people.length; i++) {
 }
 ```
 
-This `for` loop, although small and harmless looking, contains highly entangled code. It can only be tested as a whole. It is full of concreteness. Nothing in it can be reused. Users are going to be forced to duplicate the loop and most of the operations if they want to do something similar.
+This `for` loop, although small and harmless looking, contains highly entangled code. It can only be tested as a whole. It is full of specific details. Nothing in it can be reused. Users are going to be forced to duplicate the loop and most of the operations if they want to do something similar.
 
 For example: let's suppose in some parts we want to print the names of the people who can drive. And, in other parts we want to save them in a file. We want to reuse everything but the process of doing something with the names of each eligible driver. What do we do?
 
@@ -75,7 +75,7 @@ writeEligibleDriverNames(consoleStream);
 writeEligibleDriverNames(fileStream);
 ```
 
-But that will solve a part of the problem and only for this concrete scenario. We don't want to be tied to `eligibleDriverNames` so we can reuse it in more scenarios. We could generalise it a bit more by passing it as a parameter like this:
+But that will solve a part of the problem and only for this specific scenario. We don't want to be tied to `eligibleDriverNames` so we can reuse it in more scenarios. We could generalise it a bit more by passing it as a parameter like this:
 
 ```js
 var writeEach = function(collection, stream) {
