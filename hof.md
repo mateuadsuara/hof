@@ -96,7 +96,7 @@ That code now is more generic but it is completely tied to the `write` method on
 Receive functions as arguments
 ------------------------------
 
-To swap the code that we execute on `each` element of a collection we previously introduced the `stream` *duck type*. That worked because we introduced a public API that was common to the options we had at the moment. We introduced a bit of polymorphism. If we want to make it more generic, we need to remove more specific details from that API. You can think that someone receives a `text` and the outcome of that call is something that cannot be seen by the caller. That way we have removed the `stream` and `write` concepts. What we have left is just a function that receives a `text` and does not return anything. That results in much less restricted polymorphism.
+To swap the code that we execute on `each` element of a collection we previously introduced the `stream` objects. That way we had a common way to use the options we had at the moment. If we want to make it more generic, we need to remove more specific details from that. You can think that someone receives a `text` and the outcome of that call is something that cannot be seen by the caller. That way we have removed the `stream` and `write` concepts. What we have left is just a function that receives a `text` and does not return anything.
 
 ```js
 var each = function(collection, sideEffect) {
