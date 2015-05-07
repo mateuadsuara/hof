@@ -184,7 +184,7 @@ var getName = function(person){
 var eligibleDriverNames = map(drivers, getName);
 ```
 
-By hiding the `for` loop inside those functions, we have created an [abstraction][abstraction]. We have separated *what to do* from *how to do it*. Now the clients can depend only on *what to do*. That enables the possibility to change *how to do it* without affecting them.
+By hiding the `for` loop inside these functions, we have created an [abstraction][abstraction]. We have separated *what to do* from *how to do it*. Now the clients can depend only on *what to do*. That enables the possibility to change *how to do it* without affecting them.
 
 [abstraction]: http://en.wikipedia.org/wiki/Abstraction_(computer_science)
 
