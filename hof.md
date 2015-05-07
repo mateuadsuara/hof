@@ -63,7 +63,8 @@ var fileStream = {
 };
 
 var writeEligibleDriverNames = function(stream) {
-  for (var i = 0; i < eligibleDriverNames.length; i++) { 
+  var i;
+  for (i = 0; i < eligibleDriverNames.length; i++) {
     stream.write(eligibleDriverNames[i]);
   }
 };
@@ -79,7 +80,8 @@ But that will solve a part of the problem and only for this specific scenario. W
 
 ```js
 var writeEach = function(collection, stream) {
-  for (var i = 0; i < collection.length; i++) { 
+  var i;
+  for (i = 0; i < collection.length; i++) {
     stream.write(collection[i]);
   }
 };
@@ -100,7 +102,8 @@ To swap the code that we execute on `each` element of a collection we previously
 
 ```js
 var each = function(collection, elementHandler) {
-  for (var i = 0; i < collection.length; i++) { 
+  var i;
+  for (i = 0; i < collection.length; i++) {
     elementHandler(collection[i]);
   }
 };
@@ -141,7 +144,8 @@ for (var i = 0; i < people.length; i++) {
 ```js
 var filter = function(collection, predicate) {
   var filtered = [];
-  for (var i = 0; i < collection.length; i++) { 
+  var i;
+  for (i = 0; i < collection.length; i++) {
     if (predicate(collection[i])) {
       filtered.push(collection[i]);
     }
@@ -167,7 +171,8 @@ for (var i = 0; i < drivers.length; i++) {
 ```js
 var map = function(collection, transformation){
   var mapped = [];
-  for (var i = 0; i < collection.length; i++) { 
+  var i;
+  for (i = 0; i < collection.length; i++) {
     mapped.push(transformation(collection[i]));
   }
   return mapped;
@@ -272,7 +277,8 @@ var join = function(function1, function2, functionN) {
   var functions = arguments;
   return function(input) {
     var output = input;
-    for (var i = 0; i < functions.length; i++) {
+    var i;
+    for (i = 0; i < functions.length; i++) {
       output = functions[i](output);
     }
     return output;
