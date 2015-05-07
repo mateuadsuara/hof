@@ -133,7 +133,7 @@ To be able to do that we need to separate the parts involved in [each responsibi
 [srp]: http://en.wikipedia.org/wiki/Single_responsibility_principle
 
 ```js
-var drivers = [];
+var eligibleDriverNames = [];
 for (var i = 0; i < people.length; i++) { 
   if (people[i].age >= minimumAgeToDrive) {
     eligibleDriverNames.push(people[i]);
