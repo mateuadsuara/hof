@@ -232,7 +232,7 @@ The result of the function `filterCollection` is another function with one param
 
 [partial]: http://en.wikipedia.org/wiki/Partial_application
 
-But that is only valid for the `filter` function. We would like to do that with any function and any amount of arguments.
+But that is only valid for the `filter` function and only for the first argument. We would like to do that with any function and any amount of arguments.
 
 ```js
 var bind = function(initialFunction, argument1, argument2, argumentN){
