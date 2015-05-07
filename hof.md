@@ -296,6 +296,6 @@ There we have code at a much higher level of abstraction. In contrast with the c
 
 Each function does only one thing and does it well. You can extend their functionality by combining them, not modifying them. Because they are functions, as long as you keep the signature, you can change their implementations and the users will not notice. All of that makes them very loosely coupled and as a result they are extremely easy to test as units.
 
-You may start to feel now that [higher-order functions][hof] have very nice composable properties. I like to see them as a way to create a kind of lego system, a system with very composable little pieces that makes easy to create big and very expressive worlds.
+You can feel the similarity with a SOLID-conforming object-oriented system and their very nice composable properties. I like to see [higher-order functions][hof] as a way to create a kind of lego system, a system with very composable and very flexible little pieces that make easy to create big and very expressive worlds.
 
 ![lego](http://cdn.collider.com/wp-content/uploads/lego-rivendell-lord-of-the-rings-2.jpg)
