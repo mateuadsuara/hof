@@ -18,7 +18,8 @@ var people = [
   {name: "Jane", age: 15},
 ];
 
-for (var i = 0; i < people.length; i++) { 
+var i;
+for (i = 0; i < people.length; i++) {
   if (people[i].age >= minimumAgeToDrive) {
     console.log(people[i].name);
   }
@@ -31,19 +32,22 @@ For example: let's suppose in some parts we want to print the names of the peopl
 
 ```js
 var eligibleDriverNames = [];
-for (var i = 0; i < people.length; i++) { 
+var i;
+for (i = 0; i < people.length; i++) {
   if (people[i].age >= minimumAgeToDrive) {
     eligibleDriverNames.push(people[i].name);
   }
 }
 
 //in some part of the code:
-for (var i = 0; i < eligibleDriverNames.length; i++) { 
+var i;
+for (i = 0; i < eligibleDriverNames.length; i++) {
   console.log(eligibleDriverNames[i]);
 }
 
 //in other part of the code:
-for (var i = 0; i < eligibleDriverNames.length; i++) { 
+var i;
+for (i = 0; i < eligibleDriverNames.length; i++) {
   fs.appendFileSync('file', eligibleDriverNames[i]);
 }
 ```
