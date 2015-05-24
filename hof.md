@@ -274,10 +274,10 @@ var drivers = filterDrivers(people);
 var janes = filterJanes(people);
 ```
 
-The last thing we would like to do is to `join` several functions into one, having the output from one function going to the input of the next. With that, we can reproduce the behaviour of the first piece of code in the starting point.
+The last thing we would like to do is to `compose` a single function from other functions, having the output from one function going to the input of the next. With that, we can reproduce the behaviour of the first piece of code in the starting point.
 
 ```js
-var join = function(function1, function2, functionN) {
+var compose = function(function1, function2, functionN) {
   var functions = arguments;
   return function(input) {
     var output = input;
@@ -293,7 +293,7 @@ var onlyDrivers = bind(cycle(filter), canDrive);
 var getTheirNames = bind(cycle(map), getName);
 var printThem = bind(cycle(each), consoleStream.write);
 
-join(onlyDrivers, getTheirNames, printThem)(people);
+compose(onlyDrivers, getTheirNames, printThem)(people);
 ```
 
 There we have code at a much higher level of abstraction. In contrast with the code at the starting point, this one enables us to see what the program is doing in human terms: given `people` treats `only drivers`, `gets their names` and `prints them`.
